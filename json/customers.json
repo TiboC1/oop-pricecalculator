@@ -2,151 +2,181 @@
     {
         "id": 0,
         "name": "Alline Baillargeon",
-        "group_id": 1
+        "company_id": 0,
+        "department_id": 7
     },
     {
         "id": 1,
         "name": "Buddy Sharrock",
-        "group_id": 2
+        "company_id": 0,
+        "department_id": 1
     },
     {
         "id": 2,
         "name": "Anitra Genna",
-        "group_id": 3
+        "company_id": 0,
+        "department_id": 6
     },
     {
         "id": 3,
         "name": "Ivelisse Cowles",
-        "group_id": 4
+        "company_id": 0,
+        "department_id": 0
     },
     {
         "id": 4,
         "name": "Adeline Bohl",
-        "group_id": 5
+        "company_id": 1,
+        "department_id": 3
     },
     {
         "id": 5,
         "name": "Lurline Boll",
-        "group_id": 6
+        "company_id": 1,
+        "department_id": 8
     },
     {
         "id": 6,
         "name": "Oscar Martindale",
-        "group_id": 7
+        "company_id": 1,
+        "department_id": 6
     },
     {
         "id": 7,
         "name": "Brittny Raisor",
-        "group_id": 8
+        "company_id": 1,
+        "department_id": 5
     },
     {
         "id": 8,
         "name": "Charleen Delpriore",
-        "group_id": 9
+        "company_id": 2,
+        "department_id": 1
     },
     {
         "id": 9,
         "name": "Loree Roquemore",
-        "group_id": 10
+        "company_id": 2,
+        "department_id": 2
     },
     {
         "id": 10,
         "name": "Winfred Gwaltney",
-        "group_id": 11
+        "company_id": 2,
+        "department_id": 8
     },
     {
         "id": 11,
         "name": "Darren Hurt",
-        "group_id": 13
+        "company_id": 3,
+        "department_id": 0
     },
     {
         "id": 12,
         "name": "Jackie Wink",
-        "group_id": 14
+        "company_id": 3,
+        "department_id": 6
     },
     {
         "id": 13,
         "name": "Shakia Sassman",
-        "group_id": 15
+        "company_id": 4,
+        "department_id": 1
     },
     {
         "id": 14,
         "name": "Hae Releford",
-        "group_id": 17
+        "company_id": 5,
+        "department_id": 2
     },
     {
         "id": 15,
         "name": "Isaias Kaminsky",
-        "group_id": 18
+        "company_id": 5,
+        "department_id": 3
     },
     {
         "id": 16,
         "name": "Peg Kendig",
-        "group_id": 19
+        "company_id": 6,
+        "department_id": 6
     },
     {
         "id": 17,
         "name": "Sonja Monti",
-        "group_id": 21
+        "company_id": 6,
+        "department_id": 3
     },
     {
         "id": 18,
         "name": "Felisa Epstein",
-        "group_id": 22
+        "company_id": 6,
+        "department_id": 4
     },
     {
         "id": 19,
         "name": "Vince Waxman",
-        "group_id": 23
+        "company_id": 6,
+        "department_id": 8
     },
     {
         "id": 20,
         "name": "Francoise Gaiter",
-        "group_id": 24
+        "company_id": 2,
+        "department_id": 7
     },
     {
         "id": 21,
         "name": "Bruna Levering",
-        "group_id": 25
+        "company_id": 2,
+        "department_id": 0
     },
     {
         "id": 22,
         "name": "Bobbie Aparicio",
-        "group_id": 26
+        "company_id": 1,
+        "department_id": 1
     },
     {
         "id": 23,
         "name": "Shantae Engberg",
-        "group_id": 27
+        "company_id": 3,
+        "department_id": 2
     },
     {
         "id": 24,
         "name": "Dorethea Mackowiak",
-        "group_id": 28
+        "company_id": 4,
+        "department_id": 3
     },
     {
         "id": 25,
         "name": "Dorthea Siggers",
-        "group_id": 29
+        "company_id": 5,
+        "department_id": 4
     },
     {
         "id": 26,
         "name": "Reiko Mickle",
-        "group_id": 30
+        "company_id": 6,
+        "department_id": 5
     },
     {
         "id": 27,
         "name": "Cory Holz",
-        "group_id": 31
+        "company_id": 6,
+        "department_id": 6
     },
     {
         "id": 28,
         "name": "Floyd Marx",
-        "group_id": 33
+        "company_id": 0,
+        "department_id": 7
     },
     {
         "id": 29,
         "name": "Leonila Becerril",
-        "group_id": 34
+        "company_id": 6,
+        "department_id": 8
     }
 ]

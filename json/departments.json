@@ -1,0 +1,42 @@
+[
+    {
+        "id": 0,
+        "name": "marketing",
+        "fixed_discount": 4
+    },
+    {
+        "id": 1,
+        "name": "customer support",
+        "fixed_discount": 3
+    },
+    {
+        "id": 3,
+        "name": "hr",
+        "fixed_discount": 1
+    },
+    {
+        "id": 4,
+        "name": "sales",
+        "fixed_discount": 7
+    },
+    {
+        "id": 5,
+        "name": "quality assurance",
+        "fixed_discount": 6
+    },
+    {
+        "id": 6,
+        "name": "development",
+        "fixed_discount": 2
+    },
+    {
+        "id": 7,
+        "name": "communication",
+        "fixed_discount": 2
+    },
+    {
+        "id": 8,
+        "name": "it department",
+        "fixed_discount": 1
+    }
+]

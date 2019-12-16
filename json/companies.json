@@ -1,0 +1,37 @@
+[
+    {
+        "id": 0,
+        "name": "Becode",
+        "variable_discount": 26
+    },
+    {
+        "id": 1,
+        "name": "Telenet",
+        "variable_discount": 33
+    },
+    {
+        "id": 2,
+        "name": "Belgacom",
+        "variable_discount": 5
+    },
+    {
+        "id": 3,
+        "name": "IBM",
+        "variable_discount": 21
+    },
+    {
+        "id": 4,
+        "name": "Coca-cola",
+        "variable_discount": 14
+    },
+    {
+        "id": 5,
+        "name": "NMBS",
+        "variable_discount": 29
+    },
+    {
+        "id": 6,
+        "name": "De lijn",
+        "variable_discount": 14
+    }
+]

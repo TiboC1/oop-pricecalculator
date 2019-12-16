@@ -1,0 +1,10 @@
+.container-fluid {
+    display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  grid-gap: .5rem;
+}
+
+h1{
+    font-size: 3rem;
+    text-align: center;
+}
