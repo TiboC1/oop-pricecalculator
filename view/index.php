@@ -9,8 +9,7 @@ if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 require '../controller/import.php';
 require '../controller/export.php';
 require '../controller/login.php';
-
-
+require '../controller/logout.php';
 
 // end of PHP, start of HTML
 var_dump($_SESSION);
@@ -31,9 +30,12 @@ var_dump($_SESSION);
         <li><a href="register.php">Restiger</a></li>
         <li><a href="store.php">Store</a></li>
     </ul>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+        <input type="submit" value="Log out" name="logOut">
+    </form>
 </nav>
 <h1>Welcome to Fantasy Office Store</h1>
-<?php if(!isset($_SESSION["name"])){?>
+<?php if(!isset($_SESSION["name"]) || $_SESSION["name"] == ""){?>
 <div class ="center">
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
         <fieldset>

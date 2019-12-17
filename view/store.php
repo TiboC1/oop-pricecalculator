@@ -4,7 +4,7 @@
 require '../controller/import.php';
 require '../controller/export.php';
 require '../controller/login.php';
-
+require '../controller/logout.php';
 
 // starting session
 if(session_status() !== PHP_SESSION_ACTIVE) session_start();
@@ -28,6 +28,9 @@ if(session_status() !== PHP_SESSION_ACTIVE) session_start();
         <li><a href="register.php">Restiger</a></li>
         <li><a href="store.php">Store</a></li>
     </ul>
+    <form action="<?php echo htmlspecialchars("index.php");?>" method="POST">
+        <input type="submit" value="Log out" name="logOut">
+    </form>
 </nav>
 <h1>List of Products</h1>
 <div class="container-fluid">
