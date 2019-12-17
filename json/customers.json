@@ -196,5 +196,17 @@
         "name": "Tibo",
         "company_id": 1,
         "department_id": 1
+    },
+    {
+        "id": 33,
+        "name": "Thijs",
+        "company_id": 1,
+        "department_id": 4
+    },
+    {
+        "id": 34,
+        "name": "Tibo Lol",
+        "company_id": 2,
+        "department_id": 2
     }
 ]

@@ -33,10 +33,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $company = (int)test_input($_POST["loginComp"]);
                 $department = (int)test_input($_POST["loginDep"]);
             } else {
-                $name = "John Doe";
+                $name = "";
             }
         }
-        if ($name == "John Doe"){
+        if ($name == ""){
             $nameErr = "Name not found, or does not match company and/or department.";
         }
     }

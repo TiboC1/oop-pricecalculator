@@ -37,7 +37,7 @@ if(session_status() !== PHP_SESSION_ACTIVE) session_start();
     <?php
     foreach($products as $product){
 
-        if(isset($_SESSION["name"])){
+        if(isset($_SESSION["name"]) && $_SESSION["name"] != ""){
             echo echoProductWithDiscounts($product, $_SESSION["comp"], $_SESSION["dep"]);
         } else {
             echo echoProductRegular($product);

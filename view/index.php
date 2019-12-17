@@ -12,7 +12,6 @@ require '../controller/login.php';
 require '../controller/logout.php';
 
 // end of PHP, start of HTML
-var_dump($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -2,13 +2,16 @@
     display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   grid-gap: 1rem;
+  justify-items: space-evenly;
 }
 
 h1{
     font-size: 3rem;
     text-align: center;
 }
-
+.center{
+  text-align: center;
+}
 .error {
   color: #FF0000;
 }
