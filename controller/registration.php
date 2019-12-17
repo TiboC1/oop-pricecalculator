@@ -11,13 +11,18 @@ function test_input($data) {
 
 // func to add new user to JSON
 
-function addNewUser($file, $id, $name, $compId, $depId){
+function addNewUser($customersData, $file, $id, $name, $compId, $depId){
 
-    ${"$name"} = new Customer($id, $name, $compId, $depId);
+    ${"$name"} = array(
+        'id' => $id,
+        'name' => $name,
+        'company_id' => $compId,
+        'department_id' => $depId
+    );
+    array_push($customersData, ${"$name"});
+    $data_array = json_encode($customersData, JSON_PRETTY_PRINT);
 
-    array_push($customers, ${"$name"});
-
-    file_put_contents($file, json_encode($customers));
+    file_put_contents($file, $data_array);
 }
 
 // input validation
@@ -25,7 +30,8 @@ function addNewUser($file, $id, $name, $compId, $depId){
     // initialize input variables
 
     $nameErr = $compErr = $depErr = "";
-    $name = $department = $company = "";
+    $name = "";
+    $department = $company = null;
 
     // Validation
 
@@ -46,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $compErr = "Missing";
     }
     else {
-        $company = test_input($_POST["company"]);
+        $company = (int)test_input($_POST["company"]);
     }
         // department 
 
@@ -54,15 +60,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $depErr = "Missing";
     }
     else {
-        $department = test_input($_POST["department"]);
+        $department = (int)test_input($_POST["department"]);
     };
 
     if($name != "" && $company != "" && $department != "") {
         $lastElement = end($customers);
         $id = $lastElement->getId() + 1;
         $file = "../json/customers.json";
-        echo "lol";
-        addNewUser($file, $id, $name, $company, $department);
+        addNewUser($customersData, $file, $id, $name, $company, $department);
     }
   }
 

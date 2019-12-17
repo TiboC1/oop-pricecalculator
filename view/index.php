@@ -4,6 +4,7 @@
 
 require '../controller/import.php';
 require '../controller/export.php';
+require '../controller/registration.php';
 
 // starting session
 
@@ -37,11 +38,11 @@ if (session_status() == PHP_SESSION_NONE) {
         <fieldset>
             <p>
                 <label for="name">Your Name</label>
-                <input type="text" id="name">
+                <input type="text" id="loginName">
             </p>
             <p>
                 <label>Select Company</label>
-                <select id="company">
+                <select id="company" name="loginComp">
                 <?php 
                     foreach($companies as $comp){
                     echo echoValueId($comp);
@@ -51,7 +52,7 @@ if (session_status() == PHP_SESSION_NONE) {
             </p>
             <p>
                 <label>Select Department</label>
-                <select id="department">
+                <select id="department" name="loginDep">
                 <?php 
                     foreach($departments as $dep){
                     echo echoValueId($dep);

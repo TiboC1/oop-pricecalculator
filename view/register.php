@@ -7,11 +7,10 @@ require '../controller/registration.php';
 
 // starting session
 
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 
 // end of PHP, start of HTML
+
 ?>
 
 <!DOCTYPE html>
