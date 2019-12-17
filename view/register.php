@@ -71,7 +71,7 @@ if(session_status() !== PHP_SESSION_ACTIVE) session_start();
         </fieldset>
         <input type="submit" value="Register" name="submit">
     </form>
-
+ 
 <?php     
 }
 ?>
