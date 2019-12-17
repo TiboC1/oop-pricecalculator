@@ -1,7 +1,16 @@
 <?php
+//fetching required php files
+
 require '../controller/import.php';
 require '../controller/export.php';
 
+// starting session
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+// end of PHP, start of HTML
 ?>
 
 <!DOCTYPE html>
@@ -12,14 +21,26 @@ require '../controller/export.php';
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/main.css" type="text/css">
-    <title>Store</title>
+    <title>FOS Store</title>
 </head>
 <body>
+<nav>
+    <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="register.php">Restiger</a></li>
+        <li><a href="store.php">Store</a></li>
+    </ul>
+</nav>
 <h1>List of Products</h1>
 <div class="container-fluid">
     <?php
     foreach($products as $product){
-        echo echoProduct($product);
+
+        if(isset($_POST["submit"])){
+            echo echoProductWithDiscounts($product, $comp, $dep, $customer);
+        } else {
+            echo echoProductRegular($product);
+        }
 }
     ?>
 </div>

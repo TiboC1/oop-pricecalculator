@@ -1,9 +1,17 @@
 <?php
 
+//fetching required php files
+
 require '../controller/import.php';
 require '../controller/export.php';
 
+// starting session
 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+// end of PHP, start of HTML
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,13 +19,15 @@ require '../controller/export.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Store</title>
+    <link rel="stylesheet" href="./css/main.css" type="text/css">
+    <title>Fantasy Office Sales</title>
 </head>
 <body>
 <nav>
     <ul>
         <li><a href="index.php">Home</a></li>
         <li><a href="register.php">Restiger</a></li>
+        <li><a href="store.php">Store</a></li>
     </ul>
 </nav>
 <h1>Log in</h1>
@@ -50,7 +60,7 @@ require '../controller/export.php';
                 </select>
             </p>
         </fieldset>
-        <input type="submit" value="Log In">
+        <input type="submit" value="Log In" name="loggedIn">
     </form>
 </div>
 </body>
