@@ -14,38 +14,31 @@ function echoValueId($input){
 
 // price calculator
 
-function calculatePrice($comp, $dep, $customer, $prod){
+function calculatePrice($comp, $dep, $prod){
 
     $price = $prod->price;
-    $compId = $customer->company_id;
-    $depId = $customer->department_id;
-    $fixedDiscount = 0;
-    $variableDiscount = 0;
-    foreach($comp as $company){
-        if ($compId == $company->id){
-            $variableDiscount = $company->getDiscount();
-        }
-    };
-    foreach($dep as $department){
-        if ($depId == $department->id){
-            $fixedDiscount = $department->detDiscount();
-        }
-    };
+    
+    $fixedDiscount = (int)$dep;
+    $variableDiscount = (int)$comp;
+    
 
     $price = $price - $fixedDiscount;
 
     if ($variableDiscount != 0){
-    $price = $price / $variableDiscount * 100;
+    (float)$price = ($price * $variableDiscount) / 100;
     };
+    if ($price < 0) $price = 0;
 
-    return $price;
+    return number_format((float)$price, 2, '.', '');
 }
 
 
 // echo products to html bootstrap cards WITH discounts
 
-function echoProductWithDiscounts($input, $comp, $dep, $customer){
-    $price = calculatePrice($comp, $dep, $customer, $input);
+function echoProductWithDiscounts($input, $comp, $dep){
+
+    $price = calculatePrice($comp, $dep, $input);
+    $originalPrice = '<span class="original"> &euro; ' . $input->price . '</span> &euro; ';
 
     $front = '<div class="card" style="width: 18rem;">
         <img class="card-img-top" src="..." alt="Product Image">
@@ -54,11 +47,11 @@ function echoProductWithDiscounts($input, $comp, $dep, $customer){
     $middleOne = '</h5> 
         <p class="card-text">';
     $middleTwo = '</p>
-        <p class="card-text">';
+        <p class="card-text discount">';
     $back = '</p>
         </div>
         </div>';
-    $whole = $front . $input->name . $middle . $input->description . $middleTwo . $price . $back;
+    $whole = $front . $input->name . $middleOne . $input->description . $middleTwo . $originalPrice . $price . $back;
     return $whole;
 };
 
@@ -66,6 +59,7 @@ function echoProductWithDiscounts($input, $comp, $dep, $customer){
 
 function echoProductRegular($input){
     $price = $input->price;
+    $price = number_format((float)$price, 2, '.', '');
 
     $front = '<div class="card" style="width: 18rem;">
         <img class="card-img-top" src="..." alt="Product Image">
@@ -80,4 +74,15 @@ function echoProductRegular($input){
         </div>';
     $whole = $front . $input->name . $middleOne . $input->description . $middleTwo . $price . $back;
     return $whole;
+}
+
+function whatIsHappening() {
+    echo '<h2>$_GET</h2>';
+    var_dump($_GET);
+    echo '<h2>$_POST</h2>';
+    var_dump($_POST);
+    echo '<h2>$_COOKIE</h2>';
+    var_dump($_COOKIE);
+    echo '<h2>$_SESSION</h2>';
+    var_dump($_SESSION);
 }

@@ -34,7 +34,7 @@ if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 <?php if(isset($_POST["submit"]) && isset($_POST["name"]) && isset($_POST["company"]) && isset($_POST["department"])){?>
 
     <h1>Registration Complete</h1>
-    <p>Please <a href='store.php'>Log In</a></p>
+    <p>Please <a href='index.php'>Log In</a></p>
 
 <?php } else {?>
 

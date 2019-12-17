@@ -3,13 +3,11 @@
 
 require '../controller/import.php';
 require '../controller/export.php';
+require '../controller/login.php';
+
 
 // starting session
-
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-
+if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 // end of PHP, start of HTML
 ?>
 
@@ -36,8 +34,8 @@ if (session_status() == PHP_SESSION_NONE) {
     <?php
     foreach($products as $product){
 
-        if(isset($_POST["submit"])){
-            echo echoProductWithDiscounts($product, $comp, $dep, $customer);
+        if(isset($_SESSION["name"])){
+            echo echoProductWithDiscounts($product, $_SESSION["comp"], $_SESSION["dep"]);
         } else {
             echo echoProductRegular($product);
         }

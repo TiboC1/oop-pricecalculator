@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $department = (int)test_input($_POST["department"]);
     };
 
-    if($name != "" && $company != "" && $department != "") {
+    if($name != "" && $company != null && $department != null) {
         $lastElement = end($customers);
         $id = $lastElement->getId() + 1;
         $file = "../json/customers.json";

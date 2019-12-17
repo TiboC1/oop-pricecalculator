@@ -12,3 +12,11 @@ h1{
 .error {
   color: #FF0000;
 }
+
+.discount{
+  color: #FF0000;
+}
+.original{
+  color: black;
+  text-decoration-line: line-through;
+}

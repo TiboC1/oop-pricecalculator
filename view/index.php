@@ -1,16 +1,16 @@
 <?php
 
+// starting session
+
+if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+
 //fetching required php files
 
 require '../controller/import.php';
 require '../controller/export.php';
-require '../controller/registration.php';
+require '../controller/login.php';
 
-// starting session
 
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
 
 // end of PHP, start of HTML
 ?>
@@ -34,31 +34,34 @@ if (session_status() == PHP_SESSION_NONE) {
 <h1>Log in</h1>
 
 <div>
-    <form action="store.php" method="POST">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
         <fieldset>
             <p>
                 <label for="name">Your Name</label>
-                <input type="text" id="loginName">
+                <input type="text" id="name" name="loginName">
+                <span class="error"><?php echo $nameErr;?></span>
             </p>
             <p>
                 <label>Select Company</label>
                 <select id="company" name="loginComp">
+                <option selected disabled>Please select one option</option>
                 <?php 
                     foreach($companies as $comp){
                     echo echoValueId($comp);
                     }
                 ?>
-                </select>
+                </select><span class="error"><?php echo $compErr;?></span>
             </p>
             <p>
                 <label>Select Department</label>
                 <select id="department" name="loginDep">
+                <option selected disabled>Please select one option</option>
                 <?php 
                     foreach($departments as $dep){
                     echo echoValueId($dep);
                     }
                 ?>
-                </select>
+                </select><span class="error"><?php echo $depErr;?></span>
             </p>
         </fieldset>
         <input type="submit" value="Log In" name="loggedIn">
