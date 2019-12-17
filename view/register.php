@@ -73,7 +73,7 @@ if(session_status() !== PHP_SESSION_ACTIVE) session_start();
     </form>
  
 <?php     
-}
+} var_dump($_POST);
 ?>
 </body>
 </html>

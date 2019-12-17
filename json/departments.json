@@ -1,11 +1,11 @@
 [
     {
-        "id": 0,
+        "id": 1,
         "name": "marketing",
         "fixed_discount": 4
     },
     {
-        "id": 1,
+        "id": 2,
         "name": "customer support",
         "fixed_discount": 3
     },

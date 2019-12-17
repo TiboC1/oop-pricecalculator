@@ -13,6 +13,7 @@ require '../controller/login.php';
 
 
 // end of PHP, start of HTML
+var_dump($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,9 +32,9 @@ require '../controller/login.php';
         <li><a href="store.php">Store</a></li>
     </ul>
 </nav>
-<h1>Log in</h1>
-
-<div>
+<h1>Welcome to Fantasy Office Store</h1>
+<?php if(!isset($_SESSION["name"])){?>
+<div class ="center">
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
         <fieldset>
             <p>
@@ -67,5 +68,12 @@ require '../controller/login.php';
         <input type="submit" value="Log In" name="loggedIn">
     </form>
 </div>
+<?php } else {?>
+<div class="center">
+    <h2>Logged in as <?php echo ucfirst($_SESSION['name']);?> </h2>
+    <p>continue to <a href="store.php"> Store</a></p>
+    
+</div>
+<?php } ?>
 </body>
 </html>
