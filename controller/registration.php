@@ -15,21 +15,21 @@ function addNewUser($file, $id, $name, $compId, $depId){
 
     ${"$name"} = new Customer($id, $name, $compId, $depId);
 
-    file_put_contents($file, ${"$name"}, FILE_APPEND | LOCK_EX);
+    array_push($customers, ${"$name"});
 
+    file_put_contents($file, json_encode($customers));
 }
 
 // input validation
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // initialize input variables
 
     $nameErr = $compErr = $depErr = "";
     $name = $department = $company = "";
-    $totalValue = [];
 
     // Validation
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // name 
 
@@ -59,9 +59,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if($name != "" && $company != "" && $department != "") {
         $lastElement = end($customers);
-        $id = $lastElement->id + 1;
+        $id = $lastElement->getId() + 1;
         $file = "../json/customers.json";
-        addNewUser($file, $id, $name, $compId, $depId);
+        echo "lol";
+        addNewUser($file, $id, $name, $company, $department);
     }
   }
+
 

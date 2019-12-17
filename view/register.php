@@ -2,8 +2,8 @@
 //fetching required php files
 
 require '../controller/import.php';
-require '../controller/registration.php';
 require '../controller/export.php';
+require '../controller/registration.php';
 
 // starting session
 
